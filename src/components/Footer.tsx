@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <img src="public\fxemoji_hospital.svg" alt="Carefinder Logo" />
+        <img src="/fxemoji_hospital.svg" alt="Carefinder Logo" />
         <div className="carefinder-info">
           <h3>Carefinder</h3>
           <p>
