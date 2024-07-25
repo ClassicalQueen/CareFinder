@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <img src="/fxemoji_hospital.svg" alt="Carefinder Logo" />
+        <img src="/assets/fxemoji_hospital.svg" alt="Carefinder Logo" />
         <div className="carefinder-info">
           <h3>Carefinder</h3>
           <p>
@@ -34,11 +34,11 @@ const Footer: React.FC = () => {
           <h4>Contact Us</h4>
           <address>
             
-            <img src="src\assets\carbon_location-filled.svg" className="loc"/>123 Street Court, Ikoyi, Lagos, Nigeria
+            <img src="/assets/carbon_location-filled.svg" className="loc"/>123 Street Court, Ikoyi, Lagos, Nigeria
             <br />
-            <img src="src\assets\Vector (3).svg" className="loc"/>+234-806-133-4092
+            <img src="/assets/Vector (3).svg" className="loc"/>+234-806-133-4092
             <br />
-            <img src="src\assets\material-symbols_mail-outline.svg" className="loc"/>carefinder@gmail.com
+            <img src="/assets/material-symbols_mail-outline.svg" className="loc"/>carefinder@gmail.com
           </address>
         </div>
       </div>

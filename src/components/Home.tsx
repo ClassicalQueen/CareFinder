@@ -19,7 +19,7 @@ const Home: React.FC = () => {
             <button className="start-btn">Start Now</button>
           </div>
           <div className="hero-image">
-            <img src="src\assets\caretaker.png" alt="Doctor and Patient" />
+            <img src="/assets\caretaker.png" alt="Doctor and Patient" />
           </div>
         </section>
 
@@ -37,9 +37,9 @@ const Home: React.FC = () => {
               sharing valuable resources.
             </div>
             <div className="pictures">
-              <img src="src\assets\pic1.png" className="pic1"></img>
-              <img src="src\assets\pic2.png" className="pic2"></img>
-              <img src="src\assets\pic3.png" className="pic3"></img>
+              <img src="/assets\pic1.png" className="pic1"></img>
+              <img src="/assets\pic2.png" className="pic2"></img>
+              <img src="/assets\pic3.png" className="pic3"></img>
             </div>
           </div>
         </section>
@@ -50,7 +50,7 @@ const Home: React.FC = () => {
             <div className="service-card">
               <div className="icon">
                 <img
-                  src="src\assets\consultation.svg"
+                  src="/assets/consultation.svg"
                   alt="a monotone speaker"
                 />{" "}
               </div>
@@ -59,14 +59,14 @@ const Home: React.FC = () => {
             </div>
             <div className="service-card">
               <div className="icon">
-                <img src="src\assets\hospital.svg" alt="hospital image" />
+                <img src="/assets/hospital.svg" alt="hospital image" />
               </div>
               <h3>Find Hospitals</h3>
               <p>Efficiently Navigate to Good Hospitals Near You</p>
             </div>
             <div className="service-card">
               <div className="icon">
-                <img src="src\assets\export.svg" alt="export icon" />
+                <img src="/assets/export.svg" alt="export icon" />
               </div>
               <h3>Export Hospitals</h3>
               <p>Save and Share Lists of Hospitals</p>
@@ -79,7 +79,7 @@ const Home: React.FC = () => {
           <div className="testimonial-cards">
             <div className="testimonial-card">
               <div className="photo">
-                <img src="src\assets\Ellipse 1.png" alt="customer picture" />
+                <img src="/assets/Ellipse 1.png" alt="customer picture" />
               </div>
               <p>
                 Finding the right hospital is now a breeze! This website helped
@@ -89,7 +89,7 @@ const Home: React.FC = () => {
             </div>
             <div className="testimonial-card">
               <div className="photo">
-                <img src="src\assets\Ellipse 2.png" alt="customer picture" />
+                <img src="/assets/Ellipse 2.png" alt="customer picture" />
               </div>
               <p>
                 I'm incredibly grateful for the CareFinder website. It helped me
@@ -99,7 +99,7 @@ const Home: React.FC = () => {
             </div>
             <div className="testimonial-card">
               <div className="photo">
-                <img src="src\assets\Ellipse 3.png" alt="customer picture" />
+                <img src="/assets/Ellipse 3.png" alt="customer picture" />
               </div>
               <p>
                 After moving to a new city, I didn't know where to go for
