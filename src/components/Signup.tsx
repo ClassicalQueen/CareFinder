@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./signin.css";
 import Nav from "./Nav";
 import Footer from "./Footer";
@@ -101,7 +102,7 @@ const SignUpPage: React.FC = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <p className="login-link">
-            Already have an account? <a href="/login">Login</a>
+            Already have an account? <Link to="/login">Login</Link>
           </p>
         </form>
         <button type="submit" className="create-account-button">
