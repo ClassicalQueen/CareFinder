@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./signin.css";
 import Nav from "./Nav";
 import Footer from "./Footer";
@@ -80,7 +81,7 @@ const LoginForm: React.FC = () => {
           />
         </div>
         <p className="signup-link">
-          Don't have an account? <a href="/signup">Sign up</a>
+          Don't have an account? <Link to="/signup">Sign Up</Link>
         </p>
         <button type="submit" className="login-button">
           Log in
