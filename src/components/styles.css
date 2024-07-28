@@ -28,6 +28,7 @@ html {
 .nav-links {
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .nav-links li {
@@ -41,16 +42,20 @@ html {
 
 .logo img {
   margin-right: 10px;
+  max-width: 100%;
+  height: auto;
 }
 
 .login-btn {
   background-color: #2234fd;
-  padding: 5px 15px;
+  padding: 4px 15px;
   border-radius: 29px;
   color: #fee9df;
-  width: 208px;
-  height: 43px;
+  width: 188px;
+  height: 33px;
   text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
 .next {
@@ -69,17 +74,21 @@ html {
   background-color: #001e37;
   color: white;
   padding: 50px 20px;
+  flex-wrap: wrap;
 }
 
 .hero-content {
   max-width: 500px;
   text-align: left;
-  margin-right: 500px;
+  margin-right: 380px;
+  flex: 1;
 }
 
 .hero-image img {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   height: auto;
+  flex: 1;
 }
 
 .start-btn {
@@ -108,15 +117,13 @@ html {
 
 .introduction h2::after {
   content: "";
-  position: absolute;
+  display: block;
   border: 0.7px solid #67747c;
-  width: 596.01px;
+  width: 100%;
+  max-width: 596.01px;
   height: 0px;
-  top: 490px;
-  left: 376px;
-  gap: 0px;
-  border: 0.7px 0px 0px 0px;
-  opacity: 0px;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
 .introduction h3 {
@@ -132,10 +139,8 @@ html {
   font-size: 26px;
   line-height: 30.47px;
   color: #4b4c4d;
-  width: 729px;
-  height: 180px;
-  top: 883px;
-  left: 53px;
+  width: 100%;
+  max-width: 729px;
 }
 
 .pictures {
@@ -143,11 +148,12 @@ html {
   justify-content: right;
   align-items: right;
   padding: 20px;
-  margin-top: -330px;
+  flex-wrap: wrap;
   gap: 20px;
+  margin-top: -330px;
 }
 
- .pic1 {
+.pic1 {
   width: 145px;
   height: 270px;
   margin-top: 100px;
@@ -175,7 +181,7 @@ html {
   gap: 0px;
   border-radius: 10px 0px 0px 0px;
   opacity: 0px;
-} 
+}
 
 .services {
   background-color: #ffffff;
@@ -184,7 +190,6 @@ html {
 
 .services h2 {
   color: #2234fd;
-  height: 53.36px;
   text-align: center;
   font-weight: 600;
   font-size: 35px;
@@ -193,39 +198,39 @@ html {
 
 .services h2::after {
   content: "";
-  position: absolute;
+  display: block;
   border: 0.7px solid #67747c;
   width: 170px;
   height: 0px;
-  margin-top: 45px;
-  left: 590px;
-  gap: 0px;
-  border: 0.7px 0px 0px 0px;
-  opacity: 0px;
+  margin: 10px auto;
 }
 
 .service-cards {
   display: flex;
   justify-content: center;
-  background-color: #001E37;
+  background-color: #001e37;
   padding: 25px;
   margin: -20px;
   gap: 190px;
+  flex-wrap: wrap;
 }
 
 .service-card {
-  background-color: #FEE9DF;
+  background-color: #fee9df;
   padding: 20px;
   margin: 10px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 200px;
+  width: 100%;
+  max-width: 250px;
+  box-sizing: border-box;
 }
 
-.service-card .icon, .service-card h3, .service-card p {
+.service-card .icon,
+.service-card h3,
+.service-card p {
   text-align: center;
   color: #2234fd;
-  margin-bottom: -5px;
 }
 
 .testimonials {
@@ -242,15 +247,11 @@ html {
 
 .testimonials h2::after {
   content: "";
-  position: absolute;
+  display: block;
   border: 0.7px solid #67747c;
   width: 270px;
   height: 0px;
-  margin-top: 45px;
-  left: 540px;
-  gap: 0px;
-  border: 0.7px 0px 0px 0px;
-  opacity: 0px;
+  margin: 10px auto;
 }
 
 .testimonial-cards {
@@ -260,14 +261,14 @@ html {
 }
 
 .testimonial-card {
-  background-color: #FEE9DF;
-  color:#2234fd;
+  background-color: #fee9df;
+  color: #2234fd;
   padding: 20px;
   margin: 10px;
   border-radius: 30px;
-  box-shadow: -8px 10px 8px 0px #2234FD4D;
-  width: 458px;
-  height: 268px;
+  box-shadow: -8px 10px 8px 0px #2234fd4d;
+  width: 100%;
+  max-width: 400px;
   text-align: center;
   font-weight: 400;
   font-size: 20px;
@@ -282,7 +283,8 @@ html {
   font-weight: 500;
   font-size: 24px;
   line-height: 29.05px;
-  margin-left: 250px;
+  display: block;
+  margin-top: 10px;
 }
 
 .footer {
@@ -301,6 +303,7 @@ html {
   flex-wrap: wrap;
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
 }
 
 .carefinder-info,
@@ -339,22 +342,18 @@ html {
 
 .useful-links a,
 .contact-info a {
-  color: #ffffff; 
+  color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .useful-links a:hover,
 .contact-info a:hover {
-  color: #3BC9DB;
+  color: #3bc9db;
 }
 
 .contact-info address {
   margin: 0;
-}
-
-.contact-info ul {
-  padding: 0;
 }
 
 .contact-info li {
@@ -363,7 +362,7 @@ html {
 }
 
 .contact-info li::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -375,5 +374,146 @@ footer address .loc {
   width: 20px;
   height: 20px;
   margin-right: 10px;
-  margin-top: 5px;;
+  margin-top: 5px;
+}
+
+/* Responsive styles */
+
+@media screen and (max-width: 1280px) {
+  .pictures {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: -20px;
+    margin-left: -72px;
+    margin-right: -72px;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 15px;
+  }
+
+  .pic1,
+  .pic2,
+  .pic3 {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .hero-content {
+    margin-right: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .service-cards,
+  .testimonial-cards {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-content {
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .login-btn {
+    margin-top: 10px;
+  }
+
+  .introduction h2 {
+    font-size: 36px;
+  }
+
+  .introduction h3 {
+    font-size: 30px;
+  }
+
+  .intro {
+    font-size: 22px;
+  }
+
+  .pictures {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: -20px;
+    margin-left: -72px;
+    margin-right: -72px;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 15px;
+  }
+
+  .pic1,
+  .pic2,
+  .pic3 {
+    margin-top: 0px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 10px;
+  }
+
+  .name {
+    font-size: 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links li {
+    margin: 5px 0;
+  }
+
+  .login-btn {
+    width: 100%;
+    max-width: none;
+  }
+
+  .hero-content {
+    padding: 0 10px;
+  }
+
+  .start-btn {
+    width: 100%;
+    font-size: 22px;
+  }
+
+  .introduction h2 {
+    font-size: 30px;
+  }
+
+  .introduction h3 {
+    font-size: 26px;
+  }
+
+  .footer {
+    padding: 20px 10px;
+  }
+
+  .footer-content > div {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
 }

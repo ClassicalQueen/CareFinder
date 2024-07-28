@@ -116,13 +116,6 @@
     background: radial-gradient(93.92% 93.92% at 6.08% 34.5%, #4e595f 7.55%, #c09683 100%);
   }
   
-  @media (max-width: 768px) {
-    .sign-up-form {
-      padding: 20px;
-      width: 80%;
-    }
-  }
-  
   .login-container {
     display: flex;
     flex-direction: column;
@@ -133,9 +126,8 @@
   }
 
   .av-circle {
-    position: absolute;
-    top: 200px;
-    left: 630px;
+    margin: 0 auto;
+    transform: translateY(-15px);
     background-color: #001E37;
     border-radius: 50%;
     width: 100px;
@@ -202,7 +194,7 @@
   }
   
   .login-button {
-    width: 20%;
+    width: 40%;
     padding: 10px;
     margin-top: 32px;
     border: none;
@@ -212,12 +204,45 @@
     font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    transform: translateY(75px);
     align-items: center;
+    text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    left: 550px;
   }
   
   .login-button:hover {
     background: radial-gradient(93.92% 93.92% at 6.08% 34.5%, #48535a 7.55%, #c79e8c 100%);
+  }
+  
+  @media (max-width: 768px) {
+    .sign-up-form {
+      padding: 20px;
+      width: 80%;
+    }
+
+    .login-form {
+      padding: 20px;
+      width: 80%;
+    }
+
+    .user-icon, .mail-icon, .lock-icon {
+      border: 10px solid #001E37;
+  }
+  
+  .sign-up-form input {
+    width:68%
+  }
+
+  .create-account-button {
+    width: 50%;
+    padding: 12px;
+  }
+  .avatar-circle {
+    top: -80px;
+  }
+
+  .login-button {
+    transform: translateY(63px);
+    width: 40%;
+  }
   }

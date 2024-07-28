@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, FormEvent } from "react";
 import { Link } from "react-router-dom";
+// import { useRouter } from "next/navigation";
+// import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+// import { auth } from "@/firebase/firebase";
 import "./signin.css";
 import Nav from "./Nav";
 import Footer from "./Footer";
@@ -8,6 +11,9 @@ const SignUpPage: React.FC = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // const [error, setError] = useState<string | null>(null);
+  // const [message, setMessage] = useState<string | null>(null);
+  // const router = useRouter
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
