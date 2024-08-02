@@ -1,24 +1,67 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import { useRouter } from "next/navigation";
-// import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
-// import { auth } from "@/firebase/firebase";
-import "./signin.css";
+import { auth } from '../firebase.ts';
+import { useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+import "./signup.css";
 import Nav from "./Nav";
 import Footer from "./Footer";
 
 const SignUpPage: React.FC = () => {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [error, setError] = useState<string | null>(null);
-  // const [message, setMessage] = useState<string | null>(null);
-  // const router = useRouter
+  const [confirmpassword, setConfirmPassword] = useState("")
+  const [ error, setError] = useState<string | null>(null);
+  const [ message, setMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted", { username, email, password });
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setError(null);
+    setMessage(null);
+
+    if (password != confirmpassword){
+      setError("Passwords do not match");
+    }
+    try {
+      const userCredential = await createUserWithEmailAndPassword (
+        auth,
+        email,
+        password,
+      );
+      const user = userCredential.user;
+
+      await sendEmailVerification(user);
+
+       //Temporarily store user data in local storage
+
+      localStorage.setItem(
+        "registrationData",
+        JSON.stringify({
+          username,
+          email,
+        })
+      );
+
+      setMessage(
+        "Registration succesful! Please check your email"
+      );
+
+      //clear form fields
+      setUsername("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+
+      navigate("./login")
+     } catch ( error ) {
+      if (error instanceof Error) {
+        setError( error.message );
+      } else {
+        setError("An unknown error occurred");
+      }
+     }
   };
 
   return (
@@ -43,9 +86,8 @@ const SignUpPage: React.FC = () => {
             </i>
           </div>
 
-          <i className="input-icon">
+          <i className="input-icon user-icon">
             <svg
-              className="user-icon"
               width="20"
               height="20"
               viewBox="0 0 68 68"
@@ -62,12 +104,12 @@ const SignUpPage: React.FC = () => {
             type="text"
             placeholder="Username"
             value={username}
+            required
             onChange={(e) => setUsername(e.target.value)}
           />
 
-          <i className="input-icon">
+          <i className="input-icon mail-icon">
             <svg
-              className="mail-icon"
               width="20"
               height="20"
               viewBox="0 0 84 78"
@@ -75,7 +117,7 @@ const SignUpPage: React.FC = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M63.8749 0.458332H20.1249C14.8758 0.458332 9.84175 2.54352 6.1301 6.25518C2.41844 9.96684 0.333252 15.0009 0.333252 20.25V57.75C0.333252 60.3491 0.845179 62.9227 1.8398 65.3239C2.83443 67.7252 4.29227 69.907 6.1301 71.7448C9.84175 75.4565 14.8758 77.5417 20.1249 77.5417H63.8749C69.1206 77.5307 74.1483 75.4419 77.8576 71.7327C81.5669 68.0234 83.6556 62.9957 83.6666 57.75V20.25C83.6556 15.0043 81.5669 9.97661 77.8576 6.26734C74.1483 2.55806 69.1206 0.469341 63.8749 0.458332ZM48.6666 35.125C46.6166 36.2941 44.2974 36.909 41.9374 36.909C39.5775 36.909 37.2583 36.2941 35.2083 35.125L6.66659 18.75C7.03564 15.4388 8.61245 12.3798 11.0954 10.1582C13.5784 7.9366 16.7932 6.70833 20.1249 6.70833H63.8749C67.2041 6.71746 70.4139 7.94888 72.895 10.1688C75.376 12.3886 76.9554 15.4423 77.3333 18.75L48.6666 35.125Z"
+                d="M63.8749 0.458333H20.1249C14.8758 0.458333 9.84175 2.54352 6.1301 6.25518C2.41844 9.96684 0.333252 15.0009 0.333252 20.25V57.75C0.333252 60.3491 0.845179 62.9227 1.8398 65.3239C2.83443 67.7252 4.29227 69.907 6.1301 71.7448C9.84175 75.4565 14.8758 77.5417 20.1249 77.5417H63.8749C69.1206 77.5307 74.1483 75.4419 77.8576 71.7327C81.5669 68.0234 83.6556 62.9957 83.6666 57.75V20.25C83.6556 15.0043 81.5669 9.97661 77.8576 6.26734C74.1483 2.55806 69.1206 0.469342 63.8749 0.458333ZM48.6666 35.125C46.6166 36.2941 44.2974 36.909 41.9374 36.909C39.5775 36.909 37.2583 36.2941 35.2083 35.125L6.66659 18.75C7.03564 15.4388 8.61245 12.3798 11.0954 10.1582C13.5784 7.9366 16.7932 6.70833 20.1249 6.70833H63.8749C67.2041 6.71746 70.4139 7.94888 72.895 10.1688C75.376 12.3886 76.9554 15.4423 77.3333 18.75L48.6666 35.125Z"
                 fill="#FEE9DF"
               />
             </svg>
@@ -84,11 +126,11 @@ const SignUpPage: React.FC = () => {
             type="email"
             placeholder="Email ID"
             value={email}
+            required
             onChange={(e) => setEmail(e.target.value)}
           />
-          <i className="input-icon">
+          <i className="input-icon lock-icon">
             <svg
-              className="lock-icon"
               width="20"
               height="20"
               viewBox="0 0 96 100"
@@ -105,13 +147,42 @@ const SignUpPage: React.FC = () => {
             type="password"
             placeholder="Password"
             value={password}
+            required
             onChange={(e) => setPassword(e.target.value)}
           />
+
+          <i className="input-icon lock-icon2">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 96 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.8 27.0833V41.6667H9.6C7.05392 41.6667 4.61212 42.5446 2.81178 44.1074C1.01143 45.6702 0 47.7899 0 50L0 91.6667C0 93.8768 1.01143 95.9964 2.81178 97.5592C4.61212 99.122 7.05392 100 9.6 100H86.4C88.9461 100 91.3879 99.122 93.1882 97.5592C94.9886 95.9964 96 93.8768 96 91.6667V50C96 47.7899 94.9886 45.6702 93.1882 44.1074C91.3879 42.5446 88.9461 41.6667 86.4 41.6667H79.2V27.0833C79.2 19.9004 75.9129 13.0116 70.0617 7.93252C64.2106 2.85341 56.2748 0 48 0C39.7252 0 31.7894 2.85341 25.9383 7.93252C20.0871 13.0116 16.8 19.9004 16.8 27.0833ZM28.8 41.6667V27.0833C28.8 22.6631 30.8229 18.4238 34.4235 15.2982C38.0243 12.1726 42.9078 10.4167 48 10.4167C53.0922 10.4167 57.9758 12.1726 61.5765 15.2982C65.1772 18.4238 67.2 22.6631 67.2 27.0833V41.6667H28.8ZM38.4 64.5833C38.4004 63.1397 38.8328 61.7208 39.6549 60.4659C40.4769 59.2109 41.6605 58.1629 43.0896 57.4244C44.5186 56.686 46.1442 56.2825 47.807 56.2535C49.4697 56.2244 51.1127 56.5709 52.5748 57.2588C54.0369 57.9468 55.2681 58.9527 56.1476 60.1779C57.0272 61.4032 57.5249 62.8058 57.5922 64.2483C57.6594 65.6908 57.2938 67.1236 56.5311 68.4066C55.7684 69.6895 54.6349 70.7784 53.2416 71.5667L53.2032 71.5875C53.2032 71.5875 54.1392 76.5042 55.1952 82.2958V82.3C55.1952 83.1277 54.8164 83.9215 54.1422 84.5068C53.468 85.092 52.5535 85.4208 51.6 85.4208H44.3904C43.4369 85.4208 42.5224 85.092 41.8482 84.5068C41.174 83.9215 40.7952 83.1277 40.7952 82.3V82.2958L42.7872 71.5875C41.4394 70.832 40.331 69.7957 39.563 68.573C38.795 67.3503 38.3919 65.9801 38.3904 64.5875L38.4 64.5833Z"
+                fill="#FEE9DF"
+              />
+            </svg>
+          </i>
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            value={confirmpassword}
+            required
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+          {error && <p color="red">{error}</p>}
+          {message && <p color="green">{message}</p>}
+
           <p className="login-link">
             Already have an account? <Link to="/login">Login</Link>
           </p>
         </form>
-        <button type="submit" className="create-account-button">
+        <button 
+        type="submit" 
+        className="create-account-button"
+        onClick={handleSubmit}>
           Create Account
         </button>
       </div>

@@ -1,24 +1,32 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "./signin.css";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
+import { Link, useNavigate } from "react-router-dom";
+import "./signup.css";
 import Nav from "./Nav";
 import Footer from "./Footer";
 
 const LoginForm: React.FC = () => {
-  const [username, setUsername] = useState("");
+  const navigate = useNavigate();
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const onLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log("Login attempted", { username, password });
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      //signed in
+      const user = userCredential.user;
+      navigate("/hospitals")
+      console.log(user);
+    })
   };
 
   return (
     <div className="log-cont">
     <Nav />
     <div className="login-container">
-      <form className="login-form" onSubmit={handleSubmit}>
+      <form className="login-form" onSubmit={onLogin}>
         <div className="av-circle">
           <i className="av-icon">
             <svg
@@ -36,30 +44,31 @@ const LoginForm: React.FC = () => {
           </i>
         </div>
         <div className="input-group">
-          <i className="input-icon user-icon">
+        <i className="input-icon mail-icon2">
             <svg
               width="20"
               height="20"
-              viewBox="0 0 68 68"
+              viewBox="0 0 84 78"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M33.9998 34C43.2082 34 50.6665 26.5417 50.6665 17.3333C50.6665 8.125 43.2082 0.666672 33.9998 0.666672C24.7915 0.666672 17.3332 8.125 17.3332 17.3333C17.3332 26.5417 24.7915 34 33.9998 34ZM33.9998 42.3333C22.8748 42.3333 0.666504 47.9167 0.666504 59V63.1667C0.666504 65.4583 2.5415 67.3333 4.83317 67.3333H63.1665C65.4582 67.3333 67.3332 65.4583 67.3332 63.1667V59C67.3332 47.9167 45.1248 42.3333 33.9998 42.3333Z"
+                d="M63.8749 0.458333H20.1249C14.8758 0.458333 9.84175 2.54352 6.1301 6.25518C2.41844 9.96684 0.333252 15.0009 0.333252 20.25V57.75C0.333252 60.3491 0.845179 62.9227 1.8398 65.3239C2.83443 67.7252 4.29227 69.907 6.1301 71.7448C9.84175 75.4565 14.8758 77.5417 20.1249 77.5417H63.8749C69.1206 77.5307 74.1483 75.4419 77.8576 71.7327C81.5669 68.0234 83.6556 62.9957 83.6666 57.75V20.25C83.6556 15.0043 81.5669 9.97661 77.8576 6.26734C74.1483 2.55806 69.1206 0.469342 63.8749 0.458333ZM48.6666 35.125C46.6166 36.2941 44.2974 36.909 41.9374 36.909C39.5775 36.909 37.2583 36.2941 35.2083 35.125L6.66659 18.75C7.03564 15.4388 8.61245 12.3798 11.0954 10.1582C13.5784 7.9366 16.7932 6.70833 20.1249 6.70833H63.8749C67.2041 6.71746 70.4139 7.94888 72.895 10.1688C75.376 12.3886 76.9554 15.4423 77.3333 18.75L48.6666 35.125Z"
                 fill="#FEE9DF"
               />
             </svg>
           </i>
           <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            type="email"
+            placeholder="Email ID"
+            value={email}
+            required
+            onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         
           <div className="input-group">
-          <i className="input-icon lock-icon">
+          <i className="input-icon loc-icon">
             <svg
               width="20"
               height="20"
@@ -83,7 +92,10 @@ const LoginForm: React.FC = () => {
         <p className="signup-link">
           Don't have an account? <Link to="/signup">Sign Up</Link>
         </p>
-        <button type="submit" className="login-button">
+        <button 
+        type="submit" 
+        className="login-button"
+        onClick={onLogin}>
           Log in
         </button>
       </form>

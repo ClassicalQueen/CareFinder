@@ -34,11 +34,11 @@ const Footer: React.FC = () => {
           <h4>Contact Us</h4>
           <address>
             
-            <img src="/assets/carbon_location-filled.svg" className="loc"/>123 Street Court, Ikoyi, Lagos, Nigeria
+            <img src="/assets/carbon_location-filled.svg" className="loc" alt="location pin icon"/>123 Street Court, Ikoyi, Lagos, Nigeria
             <br />
-            <img src="/assets/Vector (3).svg" className="loc"/>+234-806-133-4092
+            <img src="/assets/Vector (3).svg" className="loc" alt="telephone icon"/>+234-806-133-4092
             <br />
-            <img src="/assets/material-symbols_mail-outline.svg" className="loc"/>carefinder@gmail.com
+            <img src="/assets/material-symbols_mail-outline.svg" className="loc" alt="email icon"/>carefinder@gmail.com
           </address>
         </div>
       </div>

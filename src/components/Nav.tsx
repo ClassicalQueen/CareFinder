@@ -14,9 +14,9 @@ const Nav: React.FC = () => {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li>
-            <Link to="#">Hospital List</Link>
-          </li>
+          {/* <li>
+            <Link to="/hospitals">Hospital List</Link>
+          </li> */}
           <li>
             <Link to="/signup" className="login-btn" >
               <svg

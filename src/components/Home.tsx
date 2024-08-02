@@ -4,6 +4,8 @@ import Footer from "./Footer";
 import "./styles.css";
 
 const Home: React.FC = () => {
+
+
   return (
     <div className="home">
       <Nav />

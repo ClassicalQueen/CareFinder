@@ -54,39 +54,68 @@
   }
 
   
-.user-icon {
+.signup .user-icon {
     position: absolute;
-    top: -108px;
-    left: 40px;
+    top: 80px;
+    left: 48px;
     background:#001E37;
-    border: 10px solid #001E37;
+    border: 7px solid #001E37;
     border-radius: 5px 0px 0px 5px;
-    
 }
 
-.mail-icon{
+.signup .mail-icon{
     position: absolute;
-    top: -38px;
-    left: 40px;
+    top: 150px;
+    left: 48px;
     background:#001E37;
-    border: 10px solid #001E37;
+    border: 7px solid #001E37;
     border-radius: 5px 0px 0px 5px;
 } 
 
-.lock-icon {
+.signup .lock-icon {
     position: absolute;
-    top: 32px;
-    left: 40px;
+    top: 220px;
+    left: 48px;
     background:#001E37;
-    border: 10px solid #001E37;
+    border: 7px solid #001E37;
     border-radius: 5px 0px 0px 5px;
 }
+
+.signup .lock-icon2 {
+  position: absolute;
+  top: 290px;
+  left: 48px;
+  background:#001E37;
+  border: 7px solid #001E37;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.log-cont .mail-icon2 {
+  position: absolute;
+  left: -12px;
+  background:#001E37;
+  border: 1px solid #001E37;
+  border-radius: 5px 0px 0px 5px;
+  padding: 10px;
+}
+
+.log-cont .loc-icon {
+  position: absolute;
+  left: -12px;
+  background:#001E37;
+  border: 1px solid #001E37;
+  border-radius: 5px 0px 0px 5px;
+  padding: 10px;
+}
+
 
   .login-link {
     margin-top: 10px;
     color: #ffffff;
   }
   
+  
+
   .login-link a {
     color: #ffffff;
     text-decoration: none;
@@ -194,9 +223,9 @@
   }
   
   .login-button {
-    width: 40%;
+    width: 60%;
     padding: 10px;
-    margin-top: 32px;
+    margin-top: 0px;
     border: none;
     border-radius:  0 0 5px 5px;
     background: radial-gradient(93.92% 93.92% at 6.08% 34.5%, #67747C 7.55%, #FAC6AE 100%);

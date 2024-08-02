@@ -40,6 +40,18 @@ html {
   text-decoration: none;
 }
 
+.logout .logoutbtn {
+  padding: 7px;
+  background-color:#fee9df;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.logout .logoutbtn:hover {
+  background-color: hsl(19, 94%, 90%);
+}
+
 .logo img {
   margin-right: 10px;
   max-width: 100%;
