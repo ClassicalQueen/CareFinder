@@ -65,7 +65,7 @@
 
 .signup .mail-icon{
     position: absolute;
-    top: 150px;
+    top: 151px;
     left: 48px;
     background:#001E37;
     border: 7px solid #001E37;
@@ -74,7 +74,7 @@
 
 .signup .lock-icon {
     position: absolute;
-    top: 220px;
+    top: 223px;
     left: 48px;
     background:#001E37;
     border: 7px solid #001E37;
@@ -83,7 +83,7 @@
 
 .signup .lock-icon2 {
   position: absolute;
-  top: 290px;
+  top: 293px;
   left: 48px;
   background:#001E37;
   border: 7px solid #001E37;
@@ -274,4 +274,41 @@
     transform: translateY(63px);
     width: 40%;
   }
+
+  .signup .user-icon {
+    position: absolute;
+    top: 60px;
+    left: 48px;
+    background:#001E37;
+    border: 7px solid #001E37;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.signup .mail-icon{
+    position: absolute;
+    top: 131px;
+    left: 48px;
+    background:#001E37;
+    border: 7px solid #001E37;
+    border-radius: 5px 0px 0px 5px;
+} 
+
+.signup .lock-icon {
+    position: absolute;
+    top: 203px;
+    left: 48px;
+    background:#001E37;
+    border: 7px solid #001E37;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.signup .lock-icon2 {
+  position: absolute;
+  top: 273px;
+  left: 48px;
+  background:#001E37;
+  border: 7px solid #001E37;
+  border-radius: 5px 0px 0px 5px;
+}
+
   }
