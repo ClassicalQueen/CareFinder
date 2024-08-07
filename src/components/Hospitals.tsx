@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import HospitalList from "./HospitalList";
 import Pagination from "./pagination.tsx";
 import { CSVLink } from "react-csv";
+import MarkdownEditor from "./MarkdownEditor.tsx";
 // import { onAuthStateChanged } from "firebase/auth";
 // import { auth } from "../firebase";
 // import {  signOut } from "firebase/auth";
 // import { useNavigate } from 'react-router-dom';
 import Nav2 from "./Nav2.tsx";
 import Footer from "./Footer.tsx";
-import "./hospital.css"
+import "./hospital.css";
 
 const SkeletonCard: React.FC = () => (
   <div className="max-w-sm p-8 bg-gray-200 animate-pulse flex flex-row justify-between border border-gray-200 rounded-lg shadow hover:bg-gray-100">
@@ -27,6 +28,13 @@ const MyHospitals: React.FC = () => {
   const [filteredProviders, setFilteredProviders] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  const [markdownContent, setMarkdownContent] = useState<string>("");
+
+  const handleSaveMarkdown = (content: string) => {
+    setMarkdownContent(content);
+    // Here you would typically save the content to your backend
+    console.log("Saving markdown content:", content);
+  };
 
   useEffect(() => {
     let isMounted = true;
@@ -107,14 +115,13 @@ const MyHospitals: React.FC = () => {
   return (
     <section className="bg-Primary py-20 mt- h-auto w-auto ">
       <Nav2 />
-      
+
       {/* PARENT CONTAINER */}
       <div className="container overscroll-auto box-border h-auto w-3/4  -mt-40 pb-4 bg-white m-auto shadow-xl rounded-lg shadow-lg md:w-full">
         <h2 className="text-Grey/800 text-2xl font-bold md: text-4 lg:text-3xl text-center  mb-6 p-8">
           Hospitals in Nigeria
         </h2>
         <div className="p-2 flex flex-col items-center rounded-md gap-12 divider-y-2">
-
           {/* SEARCH BAR  */}
           <form className="w-full md:w-full">
             <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
@@ -124,7 +131,7 @@ const MyHospitals: React.FC = () => {
               <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none sicon">
                 <svg
                   aria-hidden="true"
-                  className="w-5 h-5 text-gray-500 dark:text-gray-400"
+                  className="w-5 h-5 text-gray-500 dark:text-gray-400 search-icon"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -172,6 +179,11 @@ const MyHospitals: React.FC = () => {
             setCurrentPage={setCurrentPage}
             currentPage={currentPage}
           />
+
+          <div className="container mx-auto mt-8">
+            <h2 className="text-2xl font-bold mb-4">Create Hospital Entry</h2>
+            <MarkdownEditor onSave={handleSaveMarkdown} />
+          </div>
 
           <div className="flex justify-between items-center gap-4 w-full ">
             <p className="font-medium">
