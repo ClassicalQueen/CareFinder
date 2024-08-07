@@ -33,7 +33,7 @@ const MyHospitals: React.FC = () => {
   const handleSaveMarkdown = (content: string) => {
     setMarkdownContent(content);
     // Here you would typically save the content to your backend
-    console.log("Saving markdown content:", content);
+    console.log("Saving markdown content:",markdownContent, content);
   };
 
   useEffect(() => {
