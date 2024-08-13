@@ -1,137 +1,35 @@
-/* .login-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: radial-gradient(93.92% 93.92% at 6.08% 34.5%, #2B3B47 0%, #C2A093 19.68%, #B1958B 58.55%, #67747C 77.55%, #FAC6AE 100%);
-  }
-  
-  .av-circle {
-    margin: 0 auto;
-    transform: translateY(-15px);
-    background-color: #001E37;
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .av-icon svg {
-    width: 60px;
-    height: 60px;
-  }
-  
-  .login-form {
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 400px;
-  }
-  
-  .input-group {
-    position: relative;
-    margin-bottom: 1rem;
-  }
-  
-  .input-icon {
-    position: absolute;
-    left: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #7a7a7a;
-  }
-  
-  input {
-    width: 90%;
-    padding: 1rem 0.75rem 0.85rem 2.5rem;
-    border: none;
-    border-radius: 5px;
-    background-color: #67747C;
-    color: white;
+.forgot-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+ background: radial-gradient(98.93% 98.93% at 1.12% 1.07%, #001E37 0%, #666368 35.33%, #FAC6AE 62.36%, #50545D 80.38%, #FAC6AE 100%);
+}
+
+.forgot-form h2{
+  color: hsl(0, 100%, 60%);
+}
+
+.forgot-form input{
+  width: 400px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.forgot-form button{
+  padding: 10px;
+  margin-top: 15px;
+  font-size: 16px;
+  background: radial-gradient(93.92% 93.92% at 6.08% 34.5%, #67747C 7.55%, #FAC6AE 100%);
+    color: hsl(0, 100%, 50%);
     font-size: 16px;
-  }
-  
-  input::placeholder {
-    color: #aaa;
-    font-size: 18px;
-  }
-
-  .user-icon {
-    height: 10%;
-    position: absolute;
-    background: #001E37;
-    border: 1px solid #001E37;
-    border-radius: 5px 0px 0px 5px;
-  }
-  
-  .lock-icon {
-    position: absolute;
-    background: #001E37;
-    border: 1px solid #001E37;
-    border-radius: 5px 0px 0px 5px;
-  }
-  
-  .signup-link {
-    margin-bottom: 1rem;
-    color: white;
-  }
-  
-  .signup-link a {
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  .signup-link a:hover {
-    color: #001E37;
-  }
-  
-  .login-button {
-    width: 40%;
-    padding: 10px;
-    margin-top: 32px;
-    border: none;
-    border-radius: 0 0 5px 5px;
-    background: radial-gradient(93.92% 93.92% at 6.08% 34.5%, #67747C 7.55%, #FAC6AE 100%);
-    color: #fff;
-    font-size: 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    transform: translateY(75px);
+    border: none;
     align-items: center;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .login-button:hover {
-    background: radial-gradient(93.92% 93.92% at 6.08% 34.5%, #48535a 7.55%, #c79e8c 100%);
-  }
-  
-  @media (max-width: 768px) {
-    .login-form {
-      padding: 20px;
-      width: 80%;
-    }
-  
-    .login-button {
-      transform: translateY(63px);
-      width: 40%;
-    }
+}
 
-    .user-icon {
-        position: absolute;
-        background: #001E37;
-        border: 1px solid #001E37;
-        border-radius: 5px 0px 0px 5px;
-      }
-      
-      .lock-icon {
-        position: absolute;
-        background: #001E37;
-        border: 1px solid #001E37;
-        border-radius: 5px 0px 0px 5px;
-      }
-  } */
+.forgot-form button:hover{
+  background: radial-gradient(93.92% 93.92% at 6.08% 34.5%, #4e595f 7.55%, #c09683 100%);
+}

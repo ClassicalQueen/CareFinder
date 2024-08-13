@@ -11,6 +11,7 @@ const LoginForm: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+
   const onLogin = (e: React.FormEvent) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
@@ -21,6 +22,11 @@ const LoginForm: React.FC = () => {
       console.log(user);
     })
   };
+
+  const handleForgotPassword = () => {
+    navigate('/forgot-password');
+};
+
 
   return (
     <div className="log-cont">
@@ -89,6 +95,7 @@ const LoginForm: React.FC = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+        <button onClick={handleForgotPassword} className="forgot">Forgot Password?</button>
         <p className="signup-link">
           Don't have an account? <Link to="/signup">Sign Up</Link>
         </p>

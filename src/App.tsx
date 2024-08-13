@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Signup from './components/Signup';
 import LoginForm from './components/Login';
 import MyHospitals from './components/Hospitals';
+import ForgotPassword from './components/ForgotPassword.tsx';
 
 const App: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const App: React.FC = () => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/hospitals" element={<MyHospitals />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
     </Router>
   );

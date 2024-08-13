@@ -4,7 +4,8 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: radial-gradient(93.92% 93.92% at 6.08% 34.5%, #2B3B47 0%, #C2A093 19.68%, #B1958B 58.55%, #67747C 77.55%, #FAC6AE 100%);
+    background: radial-gradient(98.93% 98.93% at 1.12% 1.07%, #001E37 0%, #666368 35.33%, #FAC6AE 62.36%, #50545D 80.38%, #FAC6AE 100%);
+
   }
   
   .sign-up-form {
@@ -151,7 +152,7 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: radial-gradient(93.92% 93.92% at 6.08% 34.5%, #2B3B47 0%, #C2A093 19.68%, #B1958B 58.55%, #67747C 77.55%, #FAC6AE 100%);
+    background: radial-gradient(98.93% 98.93% at 1.12% 1.07%, #001E37 0%, #666368 35.33%, #FAC6AE 62.36%, #50545D 80.38%, #FAC6AE 100%);
   }
 
   .av-circle {
@@ -241,6 +242,15 @@
   
   .login-button:hover {
     background: radial-gradient(93.92% 93.92% at 6.08% 34.5%, #48535a 7.55%, #c79e8c 100%);
+  }
+
+  .forgot {
+    border: none;
+    background: none;
+    color: red;
+    margin-left: 60%;
+    margin-bottom: 10px;;
+    cursor: pointer;
   }
   
   @media (max-width: 768px) {
