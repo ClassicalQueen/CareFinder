@@ -5,6 +5,7 @@ import Signup from './components/Signup';
 import LoginForm from './components/Login';
 import MyHospitals from './components/Hospitals';
 import ForgotPassword from './components/ForgotPassword.tsx';
+import RegistrationSuccessful from './components/RegistrationSuccessful.tsx';
 
 const App: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const App: React.FC = () => {
         <Route path="/login" element={<LoginForm />} />
         <Route path="/hospitals" element={<MyHospitals />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/registration-successful" element={<RegistrationSuccessful />} />
       </Routes>
     </Router>
   );

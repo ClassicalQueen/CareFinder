@@ -33,3 +33,40 @@
 .forgot-form button:hover{
   background: radial-gradient(93.92% 93.92% at 6.08% 34.5%, #4e595f 7.55%, #c09683 100%);
 }
+
+.registration-successful {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.success-message-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.registration-successful h1 {
+  color: #4CAF50;
+}
+
+.registration-successful p {
+  color: #333;
+  margin: 20px 0;
+}
+
+.registration-successful .login-button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.registration-successful .login-button:hover {
+  background-color: #45a049;
+}

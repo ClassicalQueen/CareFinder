@@ -20,22 +20,19 @@ const SignUpPage: React.FC = () => {
     event.preventDefault();
     setError(null);
     setMessage(null);
-
-    if (password != confirmpassword){
+  
+    if (password !== confirmpassword) {
       setError("Passwords do not match");
+      return;
     }
+  
     try {
-      const userCredential = await createUserWithEmailAndPassword (
-        auth,
-        email,
-        password,
-      );
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-
+  
       await sendEmailVerification(user);
-
-       //Temporarily store user data in local storage
-
+  
+      // Store user data in local storage
       localStorage.setItem(
         "registrationData",
         JSON.stringify({
@@ -43,25 +40,25 @@ const SignUpPage: React.FC = () => {
           email,
         })
       );
-
-      setMessage(
-        "Registration succesful! Please check your email"
-      );
-
-      //clear form fields
+  
+      setMessage("Registration successful! Please check your email.");
+  
+      // Clear form fields
       setUsername("");
       setEmail("");
       setPassword("");
       setConfirmPassword("");
-
-      navigate("./login")
-     } catch ( error ) {
+  
+      // Navigate to Registration Successful page
+      navigate("/registration-successful");
+  
+    } catch (error) {
       if (error instanceof Error) {
-        setError( error.message );
+        setError(error.message);
       } else {
         setError("An unknown error occurred");
       }
-     }
+    }
   };
 
   return (
