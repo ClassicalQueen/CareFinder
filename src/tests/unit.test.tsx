@@ -1,10 +1,10 @@
-import { useState, act } from "react";
-import { renderHook } from '@testing-library/react'
+import { useState } from "react";
+import { renderHook, act } from '@testing-library/react'
 
 // Test for handleSaveMarkdown function
 test('handleSaveMarkdown updates markdownContent state', () => {
     const { result } = renderHook(() => useState(''));
-    const [markdownContent, setMarkdownContent] = result.current;
+    const [, setMarkdownContent] = result.current;
     
     const handleSaveMarkdown = (content: string) => {
       setMarkdownContent(content);

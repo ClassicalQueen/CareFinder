@@ -49,3 +49,5 @@ test('Nav component renders correctly', () => {
     const pageLinks = screen.getAllByRole('button');
     expect(pageLinks.length).toBe(11); // 10 page numbers + 1 "Next" button
   });
+
+  console.log(React);

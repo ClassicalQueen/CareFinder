@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { getAuth, confirmPasswordReset } from 'firebase/auth';
 
 const ResetPassword: React.FC = () => {
     const [newPassword, setNewPassword] = useState<string>('');
     const [message, setMessage] = useState<string>('');
     const [oobCode, setOobCode] = useState<string | null>(null);
-    const history = useHistory();
+    const navigate = useNavigate();
     const location = useLocation();
 
     useEffect(() => {
@@ -28,7 +28,7 @@ const ResetPassword: React.FC = () => {
         try {
             await confirmPasswordReset(auth, oobCode, newPassword);
             setMessage('Password has been reset successfully. You can now log in.');
-            history.push('/login');
+            navigate('/login'); // Redirect to the login page after successful password reset
         } catch (error) {
             setMessage('Error resetting password. Please try again.');
         }
