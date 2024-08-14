@@ -40,19 +40,20 @@ const Pagination: React.FC<PaginationProps> = ({
   };
 
   return (
-    <div className=" flex flex-wrap gap-2">
+    <div className=" flex flex-wrap gap-2 pagination-container">
       {currentPage !== 1 && (
-        <button className="btn btn-minimal" onClick={handlePreviousPage}>
+        <button className="btn btn-minimal pagbtn" onClick={handlePreviousPage}>
           Previous
         </button>
       )}
 
+      <div className="pagination-buttons">
       {Array.from({ length: endPage - startPage + 1 }, (_, index) => {
         const page = startPage + index;
         return (
           <button
             key={page}
-            className={`btn ${
+            className={`btn pagbtn ${
               page === currentPage ? "btn-primary" : "btn-minimal"
             }`}
             onClick={() => setCurrentPage(page)}
@@ -61,9 +62,10 @@ const Pagination: React.FC<PaginationProps> = ({
           </button>
         );
       })}
+      </div>
 
       {currentPage !== totalPages && (
-        <button className="btn btn-minimal" onClick={handleNextPage}>
+        <button className="btn btn-minimal pagbtn navbtn" onClick={handleNextPage}>
           Next
         </button>
       )}

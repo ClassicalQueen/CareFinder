@@ -319,7 +319,7 @@ h2 {
   position: absolute;
   width: 25px;
   height: 25px;
-  top: 47%;
+  top: 38%;
   margin-left: -22px;
 }
 
@@ -333,6 +333,7 @@ h2 {
   border-radius: 0.25rem;
   cursor: pointer;
   margin-top: 40px;
+  text-align: center;
 }
 
 .prev {
@@ -360,6 +361,16 @@ h2 {
   animation: pulse 1.5s ease-in-out infinite;
 }
 
+
+.pagbtn {
+  min-width: 40px;
+}
+
+.nav-btn {
+  width: 100%;
+  max-width: 200px;
+}
+
 @keyframes pulse {
   0%,
   100% {
@@ -384,4 +395,42 @@ h2 {
     width: 100%;
     justify-content: center;
   }
+
+  .search-icon {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 53%;
+    margin-left: -22px;
+  }
+
 }
+
+@media (max-width: 768px) {
+  .pagination-buttons {
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    gap: 5px;
+    justify-content: center;
+  }
+
+  .pagination-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination-buttons {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  .pagination-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+} 

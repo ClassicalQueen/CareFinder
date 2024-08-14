@@ -1,4 +1,4 @@
-.forgot-form {
+ .forgot-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,4 +69,20 @@
 
 .registration-successful .login-button:hover {
   background-color: #45a049;
+} 
+
+@media screen and (max-width: 480px) {
+  .forgot-form input,
+  .forgot-form button,
+  .registration-successful .login-button {
+    font-size: 14px;
+  }
+
+  .registration-successful h1 {
+    font-size: 24px;
+  }
+
+  .registration-successful p {
+    font-size: 14px;
+  }
 }
