@@ -288,7 +288,7 @@
   .signup .user-icon {
     position: absolute;
     top: 60px;
-    left: 48px;
+    left: 45px;
     background:#001E37;
     border: 7px solid #001E37;
     border-radius: 5px 0px 0px 5px;
@@ -297,7 +297,7 @@
 .signup .mail-icon{
     position: absolute;
     top: 131px;
-    left: 48px;
+    left: 45px;
     background:#001E37;
     border: 7px solid #001E37;
     border-radius: 5px 0px 0px 5px;
@@ -306,7 +306,7 @@
 .signup .lock-icon {
     position: absolute;
     top: 203px;
-    left: 48px;
+    left: 45px;
     background:#001E37;
     border: 7px solid #001E37;
     border-radius: 5px 0px 0px 5px;
@@ -315,7 +315,7 @@
 .signup .lock-icon2 {
   position: absolute;
   top: 273px;
-  left: 48px;
+  left: 45px;
   background:#001E37;
   border: 7px solid #001E37;
   border-radius: 5px 0px 0px 5px;
