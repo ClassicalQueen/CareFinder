@@ -2,6 +2,7 @@ import React from "react";
 import Nav from "./Nav";
 import Footer from "./Footer";
 import "./styles.css";
+import { Link } from "react-router-dom";
 
 const Home: React.FC = () => {
 
@@ -18,7 +19,7 @@ const Home: React.FC = () => {
               Discover Your Perfect Care: Find Your Hospital,
               <br /> Anytime, Anywhere.
             </p>
-            <button className="start-btn">Start Now</button>
+            <Link to="/signup"><button className="start-btn">Start Now</button></Link>
           </div>
           <div className="hero-image">
             <img src="/assets\caretaker.png" alt="Doctor and Patient" />
